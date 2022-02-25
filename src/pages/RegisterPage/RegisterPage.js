@@ -19,12 +19,12 @@ function RegisterPage() {
         event.preventDefault(); //페이지 새로고침을 막음
         var Customer = clayful.Customer;
         
-        var payload = {
+        const payload = {
             email: email, //key값과 value가 같으면 email, <- 이런식으로 생략 작성 가능
             password,
         };
 
-        Customer.authenticate(payload, function(err, result) {
+        Customer.createMe(payload, function(err, result) {
             if (err) {
                 // Error case
                 console.log(err.code);

@@ -24,7 +24,7 @@ const handleSubmit = (event) => {
     password,
   };
 
-  Customer.autheticate(payload, function (err, result) {
+  Customer.createMe(payload, function (err, result) {
     if (err) {
       console.log(err.code);
       return;
@@ -33,6 +33,7 @@ const handleSubmit = (event) => {
     var data = result.data;
     localStorage.setItem("customerUid", data.customer); // localStorage에 로그인 데이터 저장
     localStorage.setItem("accessToken", data.token);
+    // console.log(data);
     navigate("/");
   });
 };

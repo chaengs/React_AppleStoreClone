@@ -11,11 +11,11 @@ import axios from "axios";
 import "./css/auth.css";
 
 clayful.config({
-  client: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjQ1YmQ0MGU4Y2I3ZjEzNGZhNTI0N2E0NDVkZWViZGQyNDNiZWE5MDcyMjE2YzQ2OTdkODI0MDFlM2NhZDE3YWMiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjQ0NDA0MjE3LCJzdG9yZSI6IktNVlE2NkVOMlBONy5NOTQ1QjRBTlpFVDgiLCJzdWIiOiJWWkxYRUFUQlNGWVgifQ.bWOZHxVk0cU4brHYc16J_XTT-mGeflzAcd4FwV-3PWM'
+  client: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6Ijc2NjkzMGI2Yjg0NTY2MjZkMjE1MDMxOWNhMzMzZDVjMTE5YWRjNjc5MTUxNmQxZWU5MThiMDkyZjQ3NDZkZDIiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjQ1Nzg5NzczLCJzdG9yZSI6IktNVlE2NkVOMlBONy5NOTQ1QjRBTlpFVDgiLCJzdWIiOiJWWkxYRUFUQlNGWVgifQ.Xwzos2US-BqQVVMO-YjOAPeufmGq4fxkrDGFnYSSiYo'
 });
 
 clayful.install('request', require('clayful/plugins/request-axios')(axios));
-
+// clayful.install('request', axiosRequestMiddleware(axios));
 
 ReactDOM.render(
   <React.StrictMode>
