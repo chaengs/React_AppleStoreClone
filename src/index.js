@@ -6,10 +6,12 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import clayful from "clayful/client-js";
+
 import axios from "axios";
+import "./css/auth.css";
 
 clayful.config({
-  client: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjM5OGE4ZGZlMGVlOWJkYWMyNTkzZWY0ZGRkZGRmNmY0YzZhY2Y4MDkzNGE2OGFjNWI4NDA4OWQ0ZTA3NDYxMzkiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjQ0Mzk1Mjg3LCJzdG9yZSI6IktNVlE2NkVOMlBONy5MWTdRTVJQTlFBRlAiLCJzdWIiOiJKRVVaQTZMRTk1SlAifQ.I0ABA525d0CQrNAHJLe-YdJW9w9rkcCxf16UtHfmZoo'
+  client: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjQ1YmQ0MGU4Y2I3ZjEzNGZhNTI0N2E0NDVkZWViZGQyNDNiZWE5MDcyMjE2YzQ2OTdkODI0MDFlM2NhZDE3YWMiLCJyb2xlIjoiY2xpZW50IiwiaWF0IjoxNjQ0NDA0MjE3LCJzdG9yZSI6IktNVlE2NkVOMlBONy5NOTQ1QjRBTlpFVDgiLCJzdWIiOiJWWkxYRUFUQlNGWVgifQ.bWOZHxVk0cU4brHYc16J_XTT-mGeflzAcd4FwV-3PWM'
 });
 
 clayful.install('request', require('clayful/plugins/request-axios')(axios));
