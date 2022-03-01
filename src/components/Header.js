@@ -1,6 +1,6 @@
-import React, { useContext, useEffect } from 'react'
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import React, { useContext, useEffect } from "react";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
 //이미지 import
 import logo from "../images/icons/logo-sm.png";
@@ -8,10 +8,10 @@ import cart from "../images/icons/cart-sm.png";
 
 //css import
 import "./Header.css";
-import { AuthContext } from '../context/AuthContext';
+import { AuthContext } from "../context/AuthContext";
 
 function Header() {
-    const {isAuth, isAuthenticated, signOut} = useContext(AuthContext);
+    const { isAuth, isAuthenticated, signOut } = useContext(AuthContext);
 
     useEffect(() => {
         isAuthenticated();
@@ -32,7 +32,7 @@ function Header() {
             // jsx는 무조건 <div>나 <React.Fragment>로 감싸야 함. <div>는 실제 HTML에 들어감.
             // <React.Fragment>는 <> 로 생략하여 작성 가능
             <>
-                <Nav.Link onclifk={signOut}>Logout</Nav.Link>
+                <Nav.Link onClick={signOut}>Logout</Nav.Link>
                 <Nav.Link href="/user/cart">
                     <img src={cart} alt="cart"/>
                 </Nav.Link>
@@ -50,7 +50,7 @@ function Header() {
                 </Navbar>
             </div>
         </div>
-    )
+    );
 }
 
-export default Header
+export default Header;

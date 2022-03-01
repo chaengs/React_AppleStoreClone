@@ -5,10 +5,10 @@ import { AuthContext } from '../../context/AuthContext';
 
 function LoginPage() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [ email, setEmail ] = useState("");
+  const [ password, setPassword ] = useState("");
 
-  const {isAuthenticated} = useContext(AuthContext);
+  const { isAuthenticated } = useContext(AuthContext);
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -19,7 +19,7 @@ const handlePasswordChange = (event) => {
 };
 
 const handleSubmit = (event) => {
-  event.preventDefaul(); // 페이지 새로고침을 막음
+  event.preventDefault(); // 페이지 새로고침을 막음
   var Customer = clayful.Customer;
 
   var payload = {
@@ -27,7 +27,7 @@ const handleSubmit = (event) => {
     password,
   };
 
-  Customer.createMe(payload, function (err, result) {
+  Customer.authenticate(payload, function (err, result) {
     if (err) {
       console.log(err.code);
       return;
@@ -46,8 +46,8 @@ const handleSubmit = (event) => {
       <div className="auth-wrapper">
         <h1>로그인</h1>
         <form onSubmit={handleSubmit}>
-            <input onChange={handleEmailChange} placeholder="Apple Id" type="email" name="email" defaultValue="" />
-            <input onChange={handlePasswordChange} placeholder="암호" type="password" name="password" defaultValue="" />
+            <input onChange={handleEmailChange} placeholder="Apple Id" type="email" name="email" value={email} />
+            <input onChange={handlePasswordChange} placeholder="암호" type="password" name="password" value={password} />
             <p>
               Apple ID는 iTunes, App Store, iCloud에 로그인할 때 사용하는 이메일 주소입니다.
             </p>
@@ -57,7 +57,7 @@ const handleSubmit = (event) => {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default LoginPage
+export default LoginPage;
